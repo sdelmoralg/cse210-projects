@@ -1,5 +1,6 @@
 using System;
 using System.Net;
+using System.Runtime.CompilerServices;
 
 class Program
 {
@@ -8,35 +9,45 @@ class Program
         /*Console.Write("What is the magic number? ");
         string userResponse = Console.ReadLine();
         int magicNumber = int.Parse(userResponse);*/
-
-        Random randomGenerator = new Random();
-        int magicNumber = randomGenerator.Next(1, 101);
-
-        int guess = 0;
-
-        while (magicNumber != guess)
+        
+        string keepPlaying = "yes";
+        
+        while (keepPlaying == "yes")
         {
-            Console.Write("What is your guess? ");
-            string userGuess = Console.ReadLine();
-            guess = int.Parse(userGuess);
+            int guess = 0;
+            
+            Random randomGenerator = new Random();
+            int magicNumber = randomGenerator.Next(1, 101);
 
-            if (guess > magicNumber)
+            while (magicNumber != guess)
             {
-                Console.WriteLine("Lower");
+                Console.Write("What is your guess? ");
+                string userGuess = Console.ReadLine();
+                guess = int.Parse(userGuess);
+
+                if (guess > magicNumber)
+                {
+                    Console.WriteLine("Lower");
+                }
+
+                else if  (guess < magicNumber)
+                {
+                    Console.WriteLine("Higher");
+                }
+
+                else
+                {
+                    Console.WriteLine("You guessed it!");
+                }
+
             }
 
-            else if  (guess < magicNumber)
-            {
-                Console.WriteLine("Higher");
-            }
-
-            else
-            {
-                Console.WriteLine("You guessed it!");
-            }
+            Console.WriteLine("Do you want to play again? ");
+            keepPlaying = Console.ReadLine();
 
         }
-
+        
+        Console.WriteLine("Thanks for playing");
         
     }
 }
