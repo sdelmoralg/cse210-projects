@@ -11,17 +11,23 @@ class Program
         Journal entry = new Journal();
 
         Prompts prompt = new Prompts();
+
+
+        DateTime theCurrentTime = DateTime.Now;
+        string date = theCurrentTime.ToShortDateString();
         
         string choice = Console.ReadLine();  // user input to pick choices
         if (choice == "1")
         {
+            Console.Write($"Date: {date} - ");
             Console.WriteLine(prompt.DisplayPrompt());  
             // entry.WriteEntry();
             // TODO add this to the list of entries 
 
         }
-    }
-}
+    } /// borrar este
+
+} // borrar este 
     
 //         if (choice == "2")
 //         {

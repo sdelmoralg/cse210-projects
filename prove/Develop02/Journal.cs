@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Reflection.Metadata.Ecma335;
+using System.Globalization;
 
 public class Journal
 {
@@ -13,43 +14,44 @@ public class Journal
    // should store a list of Entry objects the data type for this should be List<Entry>
 
   
-
-   // public List<Entry> _entries = new List<Entry>();
+   // public List<Entry> _entries = new List<Entry>(); // empty list of entries *****************
 
    public string _fileName = "";
    public string _entry;
 
    public string _menu;
-
+   
    public string JournalMenu()  // menu options 
    {
       _menu = "Welcome to your Journal\nPlease select one of the following choices::\n1. Write\n2. Display\n3. Load\n4. Save\n5. Quit";
       return _menu;
       
    }
-   // public void SaveEntry() // saves journal file
-   // {
-   //    Console.WriteLine("Please enter a file name: ");
-   //    _fileName = Console.ReadLine();
-   //    using (StreamWriter outputFile = new StreamWriter(_fileName))
-   //    {
-   //       outputFile.WriteLine(_entry);
-   //    }
 
-   // }
-}
+   public void SaveEntry() // saves journal file
+   {
+      Console.WriteLine("Please enter a file name: ");
+      _fileName = Console.ReadLine();
+      using (StreamWriter outputFile = new StreamWriter(_fileName))
+      {
+         outputFile.WriteLine(_entry);
+      }
 
-//    public void WriteEntry() // 
+   }
+} // borrar este 
+
+//    public void WriteEntry() // stores the new entry
 //    {
 //       Console.WriteLine(">");
 //       _entry = Console.ReadLine();
-   
-//    }
 
+
+
+//    }
 
 //    public void LoadEndry() // loads 
 //    {
-
+//       // code to load entries
 //    }
 
 //    public List<Entry> DisplayJournal() // displays all journal contents
@@ -57,9 +59,9 @@ public class Journal
 //       public List<Entry> entries = new List<Entry>();
 
 //       return entries;
-//    }
+//    }  
 
-   
+
    
 // }
 

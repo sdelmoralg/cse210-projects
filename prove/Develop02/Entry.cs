@@ -16,8 +16,8 @@
     
 //     public Entry()
 //     {
-//         _date = DateTime.Now;
-//         _dateText = _date.ToShortDateString();
+//         // _date = DateTime.Now;
+//         // _dateText = _date.ToShortDateString();
 //     }
    
 
