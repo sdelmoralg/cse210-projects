@@ -9,11 +9,8 @@ class Program
     {
         Journal menu = new Journal();
 
-        Entry entry = new Entry();
+        Journal journal = new Journal();
 
-        entry.RamdomPrompt();
-
-        // add while loop --- what wouid you like to do?
         bool quit = false;
 
         bool welcome = true;
@@ -32,14 +29,17 @@ class Program
 
             if (choice == "1")
             {
+                Entry entry = new Entry();
+                entry.RandomPrompt(); 
                 entry.WriteEntry();
+                journal.AddEntry(entry);
 
             }
     
-            // if (choice == "2")
-            // {
-            //      /// add code to display journal content 
-            // }
+            if (choice == "2")
+            {
+                journal.SaveEntry();
+            }
 
 
             // if (choice == "3")
@@ -49,7 +49,7 @@ class Program
 
     //         if (choice == "4")
     //         {
-    //             // save
+    //             // display
     //         }
 
             if (choice == "5")

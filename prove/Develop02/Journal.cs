@@ -15,30 +15,40 @@ using System.IO.Enumeration;
 
 public class Journal
 {
-   public string _fileName;
-   public string _entry;
-
-   public string _menu;
    
+   public string _fileName;
+   public List<Entry> _entries = new List<Entry>();
+   public string _menu;
    public string JournalMenu()  // menu options 
    {
-      _menu = "Please select one of the following choices::\n1. Write\n2. Display\n3. Load\n4. Save\n5. Quit\nWhat would you like to do? ";
-      return _menu;
-      
+      _menu = "Please select one of the following choices::\n1. Write\n2. Save\n3. Load\n4. Display\n5. Quit\nWhat would you like to do? ";
+      return _menu;     
    }
+
+   public void AddEntry(Entry entry) // adds entry to the journal
+   {
+      _entries.Add(entry);
+   }
+
+   public void SaveEntry() // creates the journal file
+   {
+      Console.WriteLine("Please enter a file name: ");
+      _fileName = Console.ReadLine();
+
+      using (StreamWriter outputFile = new StreamWriter(_fileName))
+      {
+         foreach (Entry e in _entries) // saves each entry
+         {
+            outputFile.WriteLine($"Date: {e._date} - Prompt: {e.rndPrompt} "); // saves date and prompt
+            outputFile.WriteLine($"> {e.journalContent}\n"); // saves the user answer to the prompt
+            
+         }
+         
+      }
+
+   }
+
 } // borrar 
-
-
-//    public void SaveEntry() // saves journal file
-//    {
-//       Console.WriteLine("Please enter a file name: ");
-//       _fileName = Console.ReadLine();
-//       using (StreamWriter outputFile = new StreamWriter(_fileName))
-//       {
-//          outputFile.WriteLine(_entry);
-//       }
-
-//    }
 
 
 //    public void LoadEndry() // loads all entries * ask for file name
@@ -50,7 +60,7 @@ public class Journal
 
 //       foreach (string line in lines)
 //       {
-//          string[] parts = line.Split("Date:");
+//          string[] parts = line.Split("Date:"); // *** algo esta mal aqui.. no lo puedo hacer split en la fecha.
          
 //       }
    

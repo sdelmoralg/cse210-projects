@@ -14,7 +14,7 @@ public class Entry
 
     public string rndPrompt;
 
-    public void RamdomPrompt() // calls random prompt
+    public void RandomPrompt() // calls random prompt
     {
         Prompts _prompt = new Prompts();
         rndPrompt = _prompt.DisplayPrompt();
@@ -31,10 +31,7 @@ public class Entry
     {
         Console.WriteLine($"Date: {_date} - Prompt: {rndPrompt} ");
         Console.Write("> ");
-        Entry newEntry = new Entry();
-        newEntry.journalContent = Console.ReadLine();
-        _entries.Add(newEntry);
-
+        journalContent = Console.ReadLine();
     }
 
     // public void DisplayJournal() // displays all entries in the journal
