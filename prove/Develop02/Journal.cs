@@ -2,9 +2,9 @@ using System;
 using System.IO;
 using System.Reflection.Metadata.Ecma335;
 using System.Globalization;
+using System.IO.Enumeration;
 
-public class Journal
-{
+
    // this should contain all of my journal entries
    // needs behaviors such as adding an entry, dispalying all entries, saving to a file, loading from a file.
 
@@ -13,10 +13,9 @@ public class Journal
 
    // should store a list of Entry objects the data type for this should be List<Entry>
 
-  
-   // public List<Entry> _entries = new List<Entry>(); // empty list of entries *****************
-
-   public string _fileName = "";
+public class Journal
+{
+   public string _fileName;
    public string _entry;
 
    public string _menu;
@@ -27,41 +26,35 @@ public class Journal
       return _menu;
       
    }
+} // borrar 
 
-   public void SaveEntry() // saves journal file
-   {
-      Console.WriteLine("Please enter a file name: ");
-      _fileName = Console.ReadLine();
-      using (StreamWriter outputFile = new StreamWriter(_fileName))
-      {
-         outputFile.WriteLine(_entry);
-      }
 
-   }
-} // borrar este 
-
-//    public void WriteEntry() // stores the new entry
+//    public void SaveEntry() // saves journal file
 //    {
-//       Console.WriteLine(">");
-//       _entry = Console.ReadLine();
-
-
+//       Console.WriteLine("Please enter a file name: ");
+//       _fileName = Console.ReadLine();
+//       using (StreamWriter outputFile = new StreamWriter(_fileName))
+//       {
+//          outputFile.WriteLine(_entry);
+//       }
 
 //    }
 
-//    public void LoadEndry() // loads 
+
+//    public void LoadEndry() // loads all entries * ask for file name
+
 //    {
-//       // code to load entries
+//       Console.WriteLine("What is the file name? ");
+//       string _nameOfTheFile = Console.ReadLine();
+//       string [] lines = System.IO.File.ReadAllLines(_nameOfTheFile);
+
+//       foreach (string line in lines)
+//       {
+//          string[] parts = line.Split("Date:");
+         
+//       }
+   
 //    }
-
-//    public List<Entry> DisplayJournal() // displays all journal contents
-//    {
-//       public List<Entry> entries = new List<Entry>();
-
-//       return entries;
-//    }  
-
-
    
 // }
 
