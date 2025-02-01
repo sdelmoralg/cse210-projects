@@ -39,7 +39,7 @@ public class Entry
 
     // public void DisplayJournal() // displays all entries in the journal
     // {
-    //     Console.WriteLine(journalContent);
+    //     add code
     // }  
 
 }

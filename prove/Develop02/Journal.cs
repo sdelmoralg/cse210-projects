@@ -22,7 +22,7 @@ public class Journal
    
    public string JournalMenu()  // menu options 
    {
-      _menu = "Welcome to your Journal\nPlease select one of the following choices::\n1. Write\n2. Display\n3. Load\n4. Save\n5. Quit";
+      _menu = "Please select one of the following choices::\n1. Write\n2. Display\n3. Load\n4. Save\n5. Quit\nWhat would you like to do? ";
       return _menu;
       
    }
