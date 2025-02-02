@@ -4,8 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Collections.Generic;
 
     // this class should represent a journal entry. Does not have many
-    // behaviors. Its main responsability is to hold data. It has to have a
-    // display method.
+    // behaviors. Its main responsability is to hold data. 
 
 public class Entry
 {
@@ -25,7 +24,7 @@ public class Entry
     
     public Entry()
     {
-        _date = theCurrentTime.ToShortDateString(); // shows the date 
+        _date = theCurrentTime.ToShortDateString(); // converts date to string 
     }
     
     public void WriteEntry() // stores the new entry

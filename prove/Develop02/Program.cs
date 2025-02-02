@@ -35,25 +35,31 @@ class Program
 
             }
     
-            if (choice == "2")
+            else if (choice == "2")
             {
                 journal.SaveEntry();
             }
 
-
-            if (choice == "3") // load journal
+            else if (choice == "3") // load journal
             {
                 journal.LoadJournal();
             }
 
-            // if (choice == "4")
-            // {
-            //     journal.DisplayJournal(); // displays the contents of the journal
-            // }
-
-            if (choice == "5")
+            else if (choice == "4")
             {
+                journal.DisplayJournal(); // displays the contents of the journal
+            }
+
+            else if (choice == "5")
+            {
+                Console.WriteLine("Goodbye");
                 quit = true;
+            }
+
+            else
+            {
+                Console.WriteLine("Invalid response. Please try again");
+
             }
 
         }
