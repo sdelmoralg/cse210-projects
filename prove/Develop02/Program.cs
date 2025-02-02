@@ -7,9 +7,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Journal menu = new Journal();
 
-        Journal journal = new Journal();
+       Journal journal = new Journal();
 
         bool quit = false;
 
@@ -23,7 +22,7 @@ class Program
                 welcome = false;
             }
 
-            Console.WriteLine(menu.JournalMenu()); // shows the journal menu
+            Console.WriteLine(journal.JournalMenu()); // shows the journal menu
     
             string choice = Console.ReadLine();  // user input to pick choices
 
@@ -42,15 +41,15 @@ class Program
             }
 
 
-            // if (choice == "3")
-            // {
-            //     // load
-            // }
+            if (choice == "3") // load journal
+            {
+                journal.LoadJournal();
+            }
 
-    //         if (choice == "4")
-    //         {
-    //             // display
-    //         }
+            // if (choice == "4")
+            // {
+            //     journal.DisplayJournal(); // displays the contents of the journal
+            // }
 
             if (choice == "5")
             {

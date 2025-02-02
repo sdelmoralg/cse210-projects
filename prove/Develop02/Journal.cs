@@ -18,6 +18,7 @@ public class Journal
    
    public string _fileName;
    public List<Entry> _entries = new List<Entry>();
+   public Entry e = new Entry();
    public string _menu;
    public string JournalMenu()  // menu options 
    {
@@ -48,24 +49,30 @@ public class Journal
 
    }
 
-} // borrar 
+   public void LoadJournal() // loads all entries * ask for file name
 
+   {
+      Console.WriteLine("Please enter the file name: ");
+      string fileName = Console.ReadLine();
 
-//    public void LoadEndry() // loads all entries * ask for file name
-
-//    {
-//       Console.WriteLine("What is the file name? ");
-//       string _nameOfTheFile = Console.ReadLine();
-//       string [] lines = System.IO.File.ReadAllLines(_nameOfTheFile);
-
-//       foreach (string line in lines)
-//       {
-//          string[] parts = line.Split("Date:"); // *** algo esta mal aqui.. no lo puedo hacer split en la fecha.
-         
-//       }
+      string[] lines = System.IO.File.ReadAllLines(fileName);
+      
+      for (int i = 1; i <= lines.Length/3; i++)
+      {
+         Entry e = new Entry();
+         e._date = lines[3 * i - 3].Substring(6, lines[3 * i - 3].IndexOf("-") - 8);
+         e.rndPrompt = lines[3 * i - 3].Substring(lines[3 * i - 3].IndexOf("-") + 10);
+         e.journalContent = lines[3 * i - 2].Substring(2);
+         _entries.Add(e);
+      }     
+      
+   }
    
-//    }
-   
-// }
+   //  public void DisplayJournal() // displays all entries in the journal  ***not working
+   //  {
+   //       foreach (Entry e in _entries)
+   //       Console.WriteLine(e);
+   //  } 
+}
 
 

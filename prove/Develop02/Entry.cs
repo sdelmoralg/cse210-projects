@@ -1,6 +1,7 @@
 using System;
 using System.Globalization;
 using System.Security.Cryptography.X509Certificates;
+using System.Collections.Generic;
 
     // this class should represent a journal entry. Does not have many
     // behaviors. Its main responsability is to hold data. It has to have a
@@ -8,7 +9,7 @@ using System.Security.Cryptography.X509Certificates;
 
 public class Entry
 {
-    public List<Entry> _entries = new List<Entry>(); // empty list of entries
+    //public List<Entry> _entries = new List<Entry>(); // empty list of entries
     DateTime theCurrentTime = DateTime.Now;
     public string _date;
 
@@ -32,11 +33,6 @@ public class Entry
         Console.WriteLine($"Date: {_date} - Prompt: {rndPrompt} ");
         Console.Write("> ");
         journalContent = Console.ReadLine();
-    }
-
-    // public void DisplayJournal() // displays all entries in the journal
-    // {
-    //     add code
-    // }  
+    } 
 
 }
