@@ -3,7 +3,7 @@ using System.Security.Cryptography.X509Certificates;
 
 public class Word // Keeps track of a single word and whether it is shown or hidden.
 {
-    private string _word;
+    public string _word;
     private bool _hidden;
 
     // constructors: This constructor should likely accept the text of the word to save

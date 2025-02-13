@@ -6,9 +6,9 @@ public class Scripture   // Keeps track of the reference and the text of the scr
 {
     private Reference _reference;
     private string _text;
-    private List<Word> _words;
+    public List<Word> _words;
 
-// Constructors: accepts both a reference and the text of the scripture.
+// Constructors: ""accepts both a reference and the text of the scripture.
 
 // use the class by passing the
 // text of the scripture as a single string with all of the words in it.
@@ -26,18 +26,27 @@ public class Scripture   // Keeps track of the reference and the text of the scr
 
 // methods 
 
-    public string HideWords()
+    public void Display()
     {
-        Random rndm = new Random();
+        foreach (Word thiing in _words)
+        {
+            Console.WriteLine(thiing._word);
+        }
     }
 
-    public string GetRenderedText()
-    {
+    // public string HideWords()
+    // {
+    //     Random rndm = new Random();
 
-    }
+    // }
 
-    public void IsCompletelyHidden()
-    {
+    // public string GetRenderedText()
+    // {
 
-    }
+    // }
+
+    // public void IsCompletelyHidden()
+    // {
+
+    // }
 }
