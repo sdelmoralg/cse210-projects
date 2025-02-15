@@ -19,10 +19,13 @@ class Program
                 quitButton = true;
             }
             s.HideWords();
-            
+            if (s.IsCompletelyHidden() == true)
+            {
+                s.DisplayText();
+                Console.ReadLine();
+            }
         }
-        
-        // s.Display();
+    
       
     }
 }
