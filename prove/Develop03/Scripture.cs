@@ -5,7 +5,6 @@ public class Scripture   // Keeps track of the reference and the text of the scr
                          // Can hide words and get the rendered display of the text.
 {
     private Reference _reference;
-    private string _text;
     public List<Word> _words;
 
 // Constructors: ""accepts both a reference and the text of the scripture.
@@ -25,28 +24,56 @@ public class Scripture   // Keeps track of the reference and the text of the scr
 
 
 // methods 
-
-    public void Display()
+    public void HideWords()
     {
-        foreach (Word thiing in _words)
+        Random random = new Random();
+       
+        for (int i = 0; i < 3; i++)
         {
-            Console.WriteLine(thiing._word);
+            if (IsCompletelyHidden() == true)
+            {
+                break;
+            }
+
+            int index = random.Next(_words.Count);
+            if (_words[index]._Hidden  == false)
+            {
+                _words[index].Hide();
+            }
+
+            else
+            {
+                i--;
+            }
         }
     }
 
-    // public string HideWords()
-    // {
-    //     Random rndm = new Random();
+    public void DisplayText()
+    {
+        Console.Write($"{_reference.DisplayReference()} ");
+        foreach (Word word in _words)
+        {
+            if (word._Hidden == false)
+            {
+                Console.Write($"{word._word} ");
+            }
 
-    // }
+            else
+            {
+                Console.Write($"{new string('_', word._word.Length)} ");
+            }
+        }
+    }
 
-    // public string GetRenderedText()
-    // {
-
-    // }
-
-    // public void IsCompletelyHidden()
-    // {
-
-    // }
+    public bool IsCompletelyHidden()
+    {
+       if (_words.Any(Word => !Word._Hidden) == true)
+       {
+        return false;
+       }
+       else
+       {
+        return true;
+       }
+    }
 }

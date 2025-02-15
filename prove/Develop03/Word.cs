@@ -5,6 +5,11 @@ public class Word // Keeps track of a single word and whether it is shown or hid
 {
     public string _word;
     private bool _hidden;
+    
+    public bool _Hidden
+    {
+        get {return _hidden;}
+    }
 
     // constructors: This constructor should likely accept the text of the word to save
     // it as an attribute. In addition, the constructor will need to set the initial
@@ -13,7 +18,7 @@ public class Word // Keeps track of a single word and whether it is shown or hid
     public Word(string word)
     {
         _word = word;
-        _hidden = true;
+        _hidden = false;
     }
 
     // methods
