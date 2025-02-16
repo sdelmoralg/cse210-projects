@@ -1,5 +1,7 @@
 using System;
 
+// Exceeding requirements -- Added a scripture library, it selects a random scripture from the library
+// and it hides random words that are not already hidden.
 class Program
 {
     static void Main(string[] args)
