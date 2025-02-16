@@ -3,9 +3,13 @@ using System.Security.Cryptography.X509Certificates;
 
 public class Word // Keeps track of a single word and whether it is shown or hidden.
 {
-    public string _word;
-    private bool _hidden;
+    private string _word;
+    public string _Word
+    {
+        get {return _word;}
+    }
     
+    private bool _hidden;
     public bool _Hidden
     {
         get {return _hidden;}

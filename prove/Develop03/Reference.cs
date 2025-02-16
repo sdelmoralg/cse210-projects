@@ -29,7 +29,7 @@ public class Reference  // Keeps track of the book, chapter, and verse informati
 
 // methods
 
-    public string DisplayReference()
+    public string DisplayReference() 
     {
         if (_endVerse == 0)
         {

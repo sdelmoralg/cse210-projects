@@ -5,12 +5,11 @@ public class Scripture   // Keeps track of the reference and the text of the scr
                          // Can hide words and get the rendered display of the text.
 {
     private Reference _reference;
-    public List<Word> _words;
+    private List<Word> _words;
 
 // Constructors: ""accepts both a reference and the text of the scripture.
 
-// use the class by passing the
-// text of the scripture as a single string with all of the words in it.
+// use the class by passing the text of the scripture as a single string with all of the words in it.
 // Then, the constructor would have the responsibility of creating the list,
 // and splitting up the words in the string to create Word objects for each
 // one and put them in the list
@@ -55,12 +54,12 @@ public class Scripture   // Keeps track of the reference and the text of the scr
         {
             if (word._Hidden == false)
             {
-                Console.Write($"{word._word} ");
+                Console.Write($"{word._Word} ");
             }
 
             else
             {
-                Console.Write($"{new string('_', word._word.Length)} ");
+                Console.Write($"{new string('_', word._Word.Length)} ");
             }
         }
     }
