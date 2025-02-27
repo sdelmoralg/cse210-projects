@@ -11,7 +11,7 @@ public class BreathingActivity : Activity
     
    
     public void DisplayBreathingPrompt()
-    { // TODO loop
+    { // TODO add loop
 
         Console.WriteLine("Breath in...");
         for (int i = 5; i > 0; i--)
@@ -31,8 +31,7 @@ public class BreathingActivity : Activity
 
     public void RunBreathingActivity()
     {
-        // Console.WriteLine(name);
-        // Console.WriteLine(description);
+        // TODO add name and description
         UserInputCountdown();
         Console.Clear();
         Console.Write("Get ready...");

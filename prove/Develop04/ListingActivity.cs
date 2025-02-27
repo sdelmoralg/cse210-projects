@@ -4,9 +4,11 @@ public class ListingActivity : Activity
 {
     private List<string> _listingPrompts = new List<string>
     {
-        "listing prompt 1",
-        "listing prompt 2",
-        "listing prompt 3"
+        "Who are people that you appreciate?",    //  add listing prompts
+        "What are personal strengths of yours?",
+        "Who are people that you have helped this week?",
+        "When have you felt the Holy Ghost this month?",
+        "Who are some of your personal heroes?"
     };
 
     public ListingActivity(string name, string description, int duration) : base(name, description, duration)
@@ -24,7 +26,7 @@ public class ListingActivity : Activity
 
     public void RunListingActivity()
     {
-        //
+        // run activity
     }
 
 }
