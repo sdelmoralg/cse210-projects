@@ -6,19 +6,16 @@ public class Activity
 {
     private string _activityName;
     private string _description;
-    private int _duration;
-    private int inputDuration;
+    protected int _duration;
+    protected int _inputDuration;
+
     public Activity(string name, string description, int duration)
     {
         _activityName = name;              
         _description = description;
         _duration = duration;
     }
-
-    public void DisplayMenuOptions()
-    {
-        Console.WriteLine("Menu Options:\n\n1. Start Breathing Activity\n2. Start Reflecting Activity\n3. Start Listing Activity\n4. Quit\n\nSelect a choice from the menu:");
-    }
+    
     public void DisplayInitialMsg()
     {
         Console.WriteLine($"Welcome to the {_activityName}.");
@@ -34,13 +31,13 @@ public class Activity
         Console.WriteLine("well done!!");
         PauseAnimation();
         Console.WriteLine();
-        Console.WriteLine($"You have completed another {inputDuration} seconds of the {_activityName}");
+        Console.WriteLine($"You have completed another {_inputDuration} seconds of the {_activityName}");
         PauseAnimation();
     }
 
     public void PauseAnimation()
     {
-        for (int i = 10; i > 0; i--)
+        for (int i = 5; i > 0; i--)
         {
             Console.Write(".");
             Thread.Sleep(1000);
@@ -51,28 +48,33 @@ public class Activity
     {
         Console.Write("How long, in seconds, would you like for your sesion? ");
         string input = Console.ReadLine();
-        inputDuration = int.Parse(input);
+        _inputDuration = int.Parse(input);
         Console.Clear();
-        Console.Write("Get ready");
+        Console.Write("Get Ready");
         PauseAnimation();
     }
-    public void Countdown()
+    public void Countdown() 
     {
         for (int i = _duration; i > 0; i--)
         {
             Console.Write(i);
             Thread.Sleep(1000);
-            Console.Write("\b\b  \b\b");
+            Console.Write("\b \b"); 
         } 
     }
 
     public void UserInputCountdown()
     {
-        for (int i = inputDuration; i > 0; i--)
+        for (int i = _inputDuration; i > 0; i--)
         {
             Console.Write(i);
             Thread.Sleep(1000);
             Console.Write("\b\b  \b\b");
         }
     }
+    // public void GetReady()
+    // {
+    //     Console.Write("Get Ready");
+    //     PauseAnimation();
+    // }
 }

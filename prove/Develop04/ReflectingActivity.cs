@@ -59,7 +59,8 @@ public class ReflectingActivity : Activity
         Console.ReadLine();   // TODO arreglar esto
         Console.WriteLine();  // no esta mostrando las dos lineas de abajo. se va directo a las preguntas
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
-        Console.WriteLine($"You may begin in: {Countdown}");
+        Console.WriteLine($"You may begin in: ");
+        Countdown();
         Console.Clear();
         DisplayReflectingQuestion();
         DisplayReflectingQuestion();

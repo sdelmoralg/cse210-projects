@@ -4,37 +4,37 @@ using System.Reflection.Metadata.Ecma335;
 
 public class BreathingActivity : Activity
 {
+    private int _rep; // number of times the breathing in and out repeats
     public BreathingActivity(string name, string description, int duration) : base(name, description, duration)
     {
-
+        // name = "Breathing Activity";
+        // description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+        // duration = 5;
     }
-    
-   
-    public void DisplayBreathingPrompt()
-    { // TODO add loop
 
-        Console.WriteLine("Breath in...");
-        for (int i = 5; i > 0; i--)
+    public void DisplayBreathingPrompt()
+    { 
+        int count = 0;
+        while (count < _rep)
         {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b\b  \b\b");
-        } 
-        Console.WriteLine("Breath out...");
-        for (int i = 5; i > 0; i--)
-        {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b\b  \b\b");
-        } 
+            Console.WriteLine();
+            Console.Write("Breathe in... ");
+            Countdown();
+            Console.WriteLine();
+            Console.Write("Breathe out... ");
+            Countdown();
+            Console.WriteLine();
+            count++;
+        }
     }
 
     public void RunBreathingActivity()
     {
-        // TODO add name and description
-        UserInputCountdown();
-        Console.Clear();
-        Console.Write("Get ready...");
-        PauseAnimation();
+        DisplayInitialMsg(); // no salio
+        DisplayDescription(); // no salio
+        GetUserInput();  // tampoco
+        _rep = _inputDuration/(2*_duration);
+        DisplayBreathingPrompt();
+        DisplayFinalMsg();
     }
 }
