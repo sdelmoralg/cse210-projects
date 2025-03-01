@@ -19,19 +19,23 @@ public class Activity
     public void DisplayInitialMsg()
     {
         Console.WriteLine($"Welcome to the {_activityName}.");
+        Console.WriteLine();
     }
 
     public void DisplayDescription()
     {
         Console.WriteLine(_description);
+        Console.WriteLine();
     }
 
     public void DisplayFinalMsg()
     {
+        Console.WriteLine();
         Console.WriteLine("well done!!");
         PauseAnimation();
         Console.WriteLine();
         Console.WriteLine($"You have completed another {_inputDuration} seconds of the {_activityName}");
+        Console.WriteLine();
         PauseAnimation();
     }
 
@@ -52,15 +56,7 @@ public class Activity
         Console.Clear();
         Console.Write("Get Ready");
         PauseAnimation();
-    }
-    public void Countdown() 
-    {
-        for (int i = _duration; i > 0; i--)
-        {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b"); 
-        } 
+        Console.WriteLine();
     }
 
     public void UserInputCountdown()
@@ -72,9 +68,14 @@ public class Activity
             Console.Write("\b\b  \b\b");
         }
     }
-    // public void GetReady()
-    // {
-    //     Console.Write("Get Ready");
-    //     PauseAnimation();
-    // }
+        public void Countdown() 
+    {
+        for (int i = _duration; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b"); 
+        } 
+    }
+   
 }

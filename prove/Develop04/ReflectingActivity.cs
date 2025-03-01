@@ -40,13 +40,19 @@ public class ReflectingActivity : Activity
 
     public void DisplayReflectingQuestion()
     {
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(_inputDuration);
         Random r = new Random();
-        string randomQuestion = _reflectingQuestions[r.Next(_reflectingQuestions.Count)];
-        Console.WriteLine(randomQuestion);
-        Countdown();
-        Console.WriteLine();
-    }
 
+        while (DateTime.Now  < futureTime)
+        {
+            string randomQuestion = _reflectingQuestions[r.Next(_reflectingQuestions.Count)];
+            Console.WriteLine(randomQuestion);
+            Thread.Sleep(10000);
+            Console.WriteLine();  
+        }
+
+    }
     public void RunReflectingActivity()
     {
         DisplayInitialMsg();
@@ -56,18 +62,13 @@ public class ReflectingActivity : Activity
         Console.WriteLine("Consider the following prompt: ");
         DisplayReflectingPrompt();
         Console.Write("When you have something in mind, press enter to continue.");
-        Console.ReadLine();   // TODO arreglar esto
-        Console.WriteLine();  // no esta mostrando las dos lineas de abajo. se va directo a las preguntas
+        Console.ReadLine();   
+        Console.WriteLine(); 
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
-        Console.WriteLine($"You may begin in: ");
+        Console.Write($"You may begin in: ");
         Countdown();
         Console.Clear();
         DisplayReflectingQuestion();
-        DisplayReflectingQuestion();
         DisplayFinalMsg();
-        
-        
-        
-
     }
 }
