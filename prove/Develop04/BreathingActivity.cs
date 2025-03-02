@@ -28,10 +28,11 @@ public class BreathingActivity : Activity
 
     public void RunBreathingActivity()
     {
+        Console.Clear();
         DisplayInitialMsg();
         DisplayDescription(); 
         GetUserInput();  
-        _rep = _inputDuration / (2 * _duration);
+        _rep = _inputDuration / (2 * _duration); //solves for number of reps based on durations
         DisplayBreathingPrompt();
         DisplayFinalMsg();
     }

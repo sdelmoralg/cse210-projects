@@ -35,7 +35,6 @@ public class Activity
         PauseAnimation();
         Console.WriteLine();
         Console.WriteLine($"You have completed another {_inputDuration} seconds of the {_activityName}");
-        Console.WriteLine();
         PauseAnimation();
     }
 

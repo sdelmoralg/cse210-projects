@@ -3,6 +3,9 @@ using System.ComponentModel.Design;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 
+// exceeding requirements -  It doesnt repeat any of the prompts until they've all been used. If the user types anything at the menu 
+// that's not an option, it tells them to choose a valid option and shows the menu again. 
+
 class Program
 {
 	static void Main(string[] args)
@@ -40,14 +43,14 @@ class Program
 
       	else if (userInput == "4") 
       	{
-        	Console.WriteLine("Goodbye");
+        	Console.WriteLine("Goodbye\n");
         	quitButton = true;
       	}
 
       	else 
       	{
-       		Console.WriteLine("Please choose a valid option: ");
-        	Console.WriteLine();
+       		Console.WriteLine("Please choose a valid option.\nPress Enter to continue");
+        	Console.ReadLine();
       	}
 
     	}

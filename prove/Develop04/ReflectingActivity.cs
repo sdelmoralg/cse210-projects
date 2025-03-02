@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Net.Http.Headers;
 
 public class ReflectingActivity : Activity
 {
@@ -8,36 +9,49 @@ public class ReflectingActivity : Activity
     {
         
     }
-    private List<string> _reflectingPrompts = new List<string>
+    private Dictionary<string, bool> _reflectingPrompts = new Dictionary<string, bool> //dictionary to not repeat prompts
     {
-        "--- Think of a time when you stood up for someone else. ---",   
-        "--- Think of a time when you did something really difficult. ---",
-        "--- Think of a time when you helped someone in need. ---",
-        "--- Think of a time when you did something truly selfless. --- "
+        {"--- Think of a time when you stood up for someone else. ---", false},  
+        {"--- Think of a time when you did something really difficult. ---", false},
+        {"--- Think of a time when you helped someone in need. ---", false},
+        {"--- Think of a time when you did something truly selfless. --- ", false}
     };
 
-    private List<string> _reflectingQuestions = new List<string>
+    private Dictionary<string, bool> _reflectingQuestions = new Dictionary<string, bool> //dictionary to not repeat prompts
     {
-        "Why was this experience meaningful to you?",
-        "Have you ever done anything like this before?",
-        "How did you get started?",
-        "How did you feel when it was complete?",
-        "What made this time different than other times when you were not as successful?",
-        "What is your favorite thing about this experience?",
-        "What could you learn from this experience that applies to other situations?",
-        "What did you learn about yourself through this experience?",
-        "How can you keep this experience in mind in the future?"
+        {"Why was this experience meaningful to you?", false},
+        {"Have you ever done anything like this before?", false},
+        {"How did you get started?", false},
+        {"How did you feel when it was complete?", false},
+        {"What made this time different than other times when you were not as successful?", false},
+        {"What is your favorite thing about this experience?", false},
+        {"What could you learn from this experience that applies to other situations?", false},
+        {"What did you learn about yourself through this experience?", false},
+        {"How can you keep this experience in mind in the future?", false}
     };
 
     public void DisplayReflectingPrompt()
     { 
         Random random = new Random();
-        string randomPrompt = _reflectingPrompts[random.Next(_reflectingPrompts.Count)];
+        //string randomPrompt = _reflectingPrompts[random.Next(_reflectingPrompts.Count)];
+        if (_reflectingPrompts.Values.Contains(false) == false) //check if all prompts have been used
+            {
+                foreach (string key in _reflectingPrompts.Keys.ToList()) //resets prompts
+                {
+                    _reflectingPrompts[key] = false;
+                }
+            }
+        string randomPrompt = _reflectingPrompts.Keys.ElementAt(random.Next(_reflectingPrompts.Count));
+        while (_reflectingPrompts[randomPrompt] == true) //chooses new random prompt until non used one is picked
+        {
+            randomPrompt = _reflectingPrompts.Keys.ElementAt(random.Next(_reflectingPrompts.Count));
+        }
+        _reflectingPrompts[randomPrompt] = true; //sets prompt to used
         Console.WriteLine();
         Console.WriteLine(randomPrompt);
         Console.WriteLine();
     }
-
+    
     public void DisplayReflectingQuestion()
     {
         DateTime startTime = DateTime.Now;
@@ -46,15 +60,33 @@ public class ReflectingActivity : Activity
 
         while (DateTime.Now  < futureTime)
         {
-            string randomQuestion = _reflectingQuestions[r.Next(_reflectingQuestions.Count)];
+            //string randomQuestion = _reflectingQuestions[r.Next(_reflectingQuestions.Count)];
+            if (_reflectingQuestions.Values.Contains(false) == false)
+            {
+                foreach (string key in _reflectingQuestions.Keys.ToList())
+                {
+                    _reflectingQuestions[key] = false;
+                }
+            }
+
+            string randomQuestion = _reflectingQuestions.Keys.ElementAt(r.Next(_reflectingQuestions.Count));
+            if (_reflectingQuestions[randomQuestion] == true) //checks if prompt has been used
+            {
+                continue; //jumps to new iteration
+            }
+            else
+            {
+                _reflectingQuestions[randomQuestion] = true;
+            }
             Console.WriteLine(randomQuestion);
-            Thread.Sleep(10000);
+            Thread.Sleep(10000); //question timer in milliseconds
             Console.WriteLine();  
         }
 
     }
     public void RunReflectingActivity()
     {
+        Console.Clear();
         DisplayInitialMsg();
         DisplayDescription();
         GetUserInput();
