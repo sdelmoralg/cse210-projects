@@ -4,42 +4,71 @@ class Program
 {
     static void Main(string[] args)
     {
-        // code here
+		bool quitButton = false;
+		while (quitButton == false)
+		{
+			// "You have {} points." // total points 
+			Console.WriteLine("Menu Options:\n1. Create New Goal\n2. List Goals\n3. Save Goals\n4. Load Goals\n5. Record Event\n6. Quit\nSelect a choice from the menu: ");
+			string menuOption = Console.ReadLine();
 
-        // "You have {0} points."
-        // menu options : 
-        // 1. Create New Goal -> The types of goals are:
-                              // 1. Simple Goal:
-                                    // What is the name of your goal?
-                                    // what is a short description of it?
-                                    // What is the amount of points associated with this goal?
-                              // 2. Eternal Goal:
-                                    // what is the name of your Goal?
-                                    // what is a short description of it?
-                                    // What is the amount of points associated with this goal?
-                              // 3. Checklist Goal:
-                                    // What is the name of your goal?
-                                    // what is a short description of it?
-                                    // What is the amount of points associated with this goal?
-                                    // How many times does this goal need to be accomplished for a bonus?
-                                    // What is the bonus for accomplishing it that many times?
+			if (menuOption == "1")
+			{
+				Console.WriteLine("The types of goals are:\n1. Simple Goal\n2. Eternal Goal\n3. Checklist Goal\nWhich type of goal would you liek to create? ");
+				string goalOption = Console.ReadLine();
 
-        // 2. List Goals -> The goals are: <list> **[ ] name (description) **
-                                                // for eternal goals it has name, description and ** -- Currently completed: 0/0 **
+				if (goalOption == "1")
+				{
+					// simple goal
+					// add to list // 
+					// "what is the name of your goal?
+					// "what is a short description of it?
+					// what is the amount of points associated with this goal?
+				}
+				 else if (goalOption == "2")
+				 {
+					// eternal goal
+				 }
 
-        // 3. Save Goals -> What is the name for the goal file?
+				 else if (goalOption == "3")
+				 {
+					// checklist goal
+				 }
+			}
 
-        // 4. Load Goals -> What is the filename for the goal file?
+			else if (menuOption == "2")
+			{
+				// list goals
+			}
 
-        // 5. Record Event -> Which goal did you accomplished? 
-                            // "Congratulations! You have earned {0} points!
-                            // "You now have {0} points!"
+			else if (menuOption == "3")
+			{
+				// save goals
+			}
 
-        // 6. Quit
+			else if (menuOption == "4")
+			{
+				// load goals
+			}
 
+			else if (menuOption == "5")
+			{
+				// record event
+			}
 
+			else if (menuOption == "6")
+			{
+				Console.WriteLine("Goodbye!\n");
+				quitButton = true;
+			}
 
-        //www.plantuml.com/plantuml/png/rLJHQi8m57tFL-Inelv0AIAeoC39cBwFsDwvi3GfoRKmDlzzNfFIDElUjvTYphtdv9wJnAL3OV5IAxOrGl7YQpxd1rat2Y9WWs2rY5jMRr2-A-ammXw55cUmZ9LAECVl1VR9vln5Ynfoxj1AVQPr1Qwqia5fT0mtHcfqERzz6PlU1RAOEkD3OW0ZseHu1y2zg26RvBmrilB8kcT6XMSeZQqsBMYCq0UtCfG00e4dOnIxCiQzBH-Ez-MUeebfJIDtt2fGsJHmicZG6I-7RMEJyw8mBLWhArWiVhMHTgMUqfPHWyCEiXjECHozzmk9NnZtsv7-a-7Wjx_Otd6PE3uPVKbF7MKDxcYw7OPudqwurlqEV9WFINU_HwX_DA_mw7rQQ52e99rNgM2VlF-p4Med7UQSlWNTeWNP2s9PgZFZf3ByAnZJy1c95cWLFUYT4LM00ly6hgLhbFZO1fs-lQlu0NxYHvekALxP4dHrgTKt
+			else
+			{
+				Console.WriteLine("Please choose a valid option.\nPress enter to continue");
+				Console.ReadLine();
+			}
+
+		}
+
 
     }
 }
