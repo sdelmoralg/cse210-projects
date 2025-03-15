@@ -2,17 +2,26 @@ using System;
 
 public class Simple : Goal
 {
-    private int _sPoints;
-    private bool _sGoalCompleted;
+    // private bool _sGoalCompleted = false;
 
-    public override void RecordEvent()
+    // public Simple(int points, bool simpleGoalCompleted) : base(points)
+    // {
+    //     _sGoalCompleted = simpleGoalCompleted;
+    // }
+   
+    public override void RecordEvent() //  should mark a goal completed
     {
-        // code here 
+        Console.WriteLine("Which goal did you accomplished? ");
+        string goalAccomplished = Console.ReadLine();
+
+    //     if (goalAccomplished = ) // ?
+
+
     }
 
-    public override bool IsComplete()
-    {
-        // code 
+    public override bool IsComplete() // This method should return true if the goal is completed. 
+    {                                 // The way you determine if a goal is complete is different for each type of goal.
+        return true;
     }
 
 }

@@ -2,8 +2,8 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
-    {
+	static void Main(string[] args)
+	{
 		bool quitButton = false;
 		while (quitButton == false)
 		{
@@ -13,31 +13,30 @@ class Program
 
 			if (menuOption == "1")
 			{
-				Console.WriteLine("The types of goals are:\n1. Simple Goal\n2. Eternal Goal\n3. Checklist Goal\nWhich type of goal would you liek to create? ");
+				Console.WriteLine("The types of goals are:\n1. Simple Goal\n2. Eternal Goal\n3. Checklist Goal\nWhich type of goal would you like to create? ");
 				string goalOption = Console.ReadLine();
 
 				if (goalOption == "1")
 				{
-					// simple goal
-					// add to list // 
-					// "what is the name of your goal?
-					// "what is a short description of it?
-					// what is the amount of points associated with this goal?
+					Goal s = new Simple();
+					s.UserInput();
 				}
-				 else if (goalOption == "2")
-				 {
-					// eternal goal
-				 }
+				else if (goalOption == "2")
+				{
+					Goal e = new Eternal();
+					e.UserInput();
+				}
 
-				 else if (goalOption == "3")
-				 {
-					// checklist goal
-				 }
+				else if (goalOption == "3")
+				{
+					Goal c = new Checklist();
+					c.UserInput();
+				}
 			}
 
 			else if (menuOption == "2")
 			{
-				// list goals
+				// DisplayGoalList();
 			}
 
 			else if (menuOption == "3")
@@ -70,5 +69,5 @@ class Program
 		}
 
 
-    }
+	}
 }
