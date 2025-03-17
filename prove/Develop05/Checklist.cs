@@ -79,8 +79,7 @@ public class Checklist : Goal
     }
     public override bool IsComplete() 
     {
-        return _cGoalCompleted;
-        
+        return ChecklistGoalCompleted;
         
     }
 }
