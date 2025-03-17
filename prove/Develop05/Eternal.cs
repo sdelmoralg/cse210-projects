@@ -3,12 +3,17 @@ using System;
 public class Eternal : Goal
 {
 
-    public override void RecordEvent() // should mark a goal completed. eternal goals are never completed
+    public Eternal(string type, string name, string description, int points) : base(type, name, description, points)
     {
-        // code here 
+     
+    }
+    public override void RecordEvent(Manager m) // Eternal goals are never completed but they earn points
+    {
+        m.TotalPoints += Points;
+        Console.WriteLine($"You earned {Points} points!");
     }
     public override bool IsComplete()
     {
-        return false;
+        return false;  // eternal goals are never completed
     }
 }

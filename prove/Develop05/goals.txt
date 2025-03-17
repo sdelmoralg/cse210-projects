@@ -1,0 +1,4 @@
+150
+Simple Goal,homework,finish assignments on time,50,True
+Eternal Goal,family,spend more quality time with my family,50,False
+Checklist Goal,water,drink at least 4 bottles of water a day,50,False,300,4, 1
