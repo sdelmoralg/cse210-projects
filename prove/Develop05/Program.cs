@@ -1,5 +1,6 @@
 using System;
 
+// exceeding requirements - added exception handling in some parts of the program
 class Program
 {
 	static void Main(string[] args)
