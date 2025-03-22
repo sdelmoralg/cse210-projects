@@ -5,14 +5,14 @@ public class Video
 {
     private string _title;
     private string _author;
-    private int _length;
+    private int _seconds;
     private List<Comment> _commentList;
 
-    public Video(string title, string author, int length)
+    public Video(string title, string author, int seconds)
     {
         _title = title;
         _author = author;
-        _length = length;
+        _seconds = seconds;
     }
 
     public int numOfComments()
