@@ -74,7 +74,7 @@ public class Manager // this class will manage user interface and saving/loading
             i++; // enumera las metas
             if (goal.IsComplete() == true) 
             {
-                checkMark = "X"; 
+                checkMark = "X";  
             }
             else
             {
