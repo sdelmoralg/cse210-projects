@@ -1,9 +1,16 @@
 using System;
+using System.ComponentModel;
 
 public class Order
 {
     private Customer _customer;
     private List<Product> _productList = new List<Product>();
+
+    public Order(Customer customer)
+    {
+        _customer = customer;
+        _productList = new List<Product>();
+    }
 
     public double TotalCost()
     {
