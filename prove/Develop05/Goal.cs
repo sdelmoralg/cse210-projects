@@ -4,7 +4,7 @@ using System.Collections.Concurrent;
 public abstract class Goal
 {
     private string _type;
-    private string _name;
+    private string _name;                  
     private string _description;
     private int _points;
 

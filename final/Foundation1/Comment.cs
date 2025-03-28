@@ -2,17 +2,12 @@ using System;
 
 public class Comment
 {
-    private string _name;
-    private string _text;
-
+    public string _name;    // private?
+    public string _text;
+                            // get set??
     public Comment(string name, string text)
     {
         _name = name;
         _text = text;
-    }
-
-    public void DisplayComment()
-    {
-        // display comment
     }
 }
