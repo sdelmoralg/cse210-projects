@@ -33,12 +33,13 @@ public class Order
 
     }
 
-    public string PackingLabel() // packing label -  list name and product id of each product in order
+    public string PackingLabel() // packing label -  list name and product id of each product in order   ** works
     {
         string label="";
+        Console.WriteLine("Order: ");
         foreach (var product in _productList)
         {
-            label = product.ProductInfo();
+            label += product.ProductInfo() + "\n";
         }
         return label;
     }
@@ -46,6 +47,11 @@ public class Order
     public void ShippingLabel() // shipping label. list name and address of the customer  *** works
     {
         Console.WriteLine($"Shipping to:\n{_customer.NameAndAddress()}");
+    }
+ 
+    public void AddProductToList(Product product)
+    {
+        _productList.Add(product);
     }
 }
 
