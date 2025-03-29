@@ -11,8 +11,13 @@ public class Customer
         _address = address;
     }
 
-    public bool LivesInUSA()
+    public bool LivesInUSA() // customer lives in the usa? **this should call a method on the address to find this**
     {
-        return // customer lives in the usa? **this should call a method on the address to find this**
+        return _address.IsInUSA();
+    }
+
+    public string NameAndAddress()
+    {
+        return $"{_name}\n{_address.GetAddress()}";
     }
 }

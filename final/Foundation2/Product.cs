@@ -19,4 +19,9 @@ public class Product
     {
         return _pricePerUnit * _quantity;
     }
+
+    public string ProductInfo() // name and id 
+    {
+        return $"{_productName} {_productId}";
+    }
 }

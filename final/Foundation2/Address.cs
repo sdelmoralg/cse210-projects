@@ -1,4 +1,5 @@
 using System;
+using System.Net.WebSockets;
 
 public class Address
 {
@@ -6,7 +7,7 @@ public class Address
     private string _city;
     private string _state;
     private string _country;
-
+    
     public Address(string street, string city, string state, string country)
     {
         _street = street;
@@ -15,13 +16,20 @@ public class Address
         _country = country;
     }
 
-    public bool IsInUSA()
+    public bool IsInUSA() // is in the usa?
     {
-        return // is in the usa?
+		if (_country != "usa")
+        {
+            return false;
+        }
+        else
+        {
+			return true;
+        }    
     }
 
-    public void GetAddress()
+    public string GetAddress()
     {
-        Console.WriteLine($"{_street}, {_city},\n{_state} {_country}");
+        return $"{_street}\n{_city}, {_state}. {_country}";
     }
-}
+}	
