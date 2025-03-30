@@ -2,10 +2,10 @@ using System;
 using System.Windows.Markup;
 public class Video
 {
-    public string _title;     
-    public string _author;
-    public int _seconds;
-    public List<Comment> _commentList;
+    private string _title;     
+    private string _author;
+    private int _seconds;
+    private List<Comment> _commentList;
                                             
     public Video(string title, string author, int seconds)
     {
@@ -30,7 +30,8 @@ public class Video
         Console.WriteLine($"\"{_title}\" by {_author}\nLength: {_seconds} seconds  -  Number of comments: {numOfComments()}");
         foreach (var comment in _commentList)
         {
-            Console.WriteLine($"{comment._name}: {comment._text}"); 
+            // Console.WriteLine($"{comment._name}: {comment._text}"); 
+            comment.GetNameAndComment();
         }
     }
 }
