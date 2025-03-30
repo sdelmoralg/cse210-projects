@@ -16,21 +16,24 @@ public class Order
     public double TotalCost() // total price = sum of total cost of each product plus one time shipping cost
 // if in USA shipping cost is $5. if not in the USA shipping cost is $35
     {
-        double total = 0;
+        double total = 0;                                  
         foreach (var product in _productList)
         {
+            double productCost = product.ProductTotalCost();  
             total += product.ProductTotalCost();
         }
+        double shippingCost;
         if (_customer.LivesInUSA())
         {
-            total += 5;
+            shippingCost = 5;
         }
         else
         {
-            total += 35;
+            shippingCost= 35;
         }
-        return total;
 
+        total += shippingCost;
+        return total;
     }
 
     public string PackingLabel() // packing label -  list name and product id of each product in order   ** works

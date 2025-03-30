@@ -10,9 +10,10 @@ class Program
         order1.AddProductToList(new Product("Kids Camera", "KC1234", 18.99, 1));
         order1.AddProductToList(new Product("Fiber Gummies", "FG5678", 5.99, 1));
 
-
         order1.ShippingLabel();
         Console.WriteLine();
         Console.WriteLine(order1.PackingLabel());
+        Console.WriteLine("Total Price:");
+        Console.WriteLine($"${order1.TotalCost():F2}");
     }
 }  
