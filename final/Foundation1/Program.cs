@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<Video> videos = new List<Video>();  /// video list - ya funciona
+        List<Video> videos = new List<Video>();  /// video list 
 
         Video video1 = new Video("How to Learn Spanish in 2 weeks", "Robert Garcia", 300);  
         video1.AddComment("Grace Larsen", "Great video! i always wanted to learn spanish");  //name, comment

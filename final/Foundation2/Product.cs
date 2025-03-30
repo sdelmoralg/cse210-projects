@@ -22,6 +22,6 @@ public class Product
 
     public string ProductInfo() // name and id 
     {
-        return $"Name: {_productName} - ID: {_productId}";
+        return $"Product: {_productName} - ID: {_productId}";
     }
 }

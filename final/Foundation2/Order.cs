@@ -36,7 +36,7 @@ public class Order
         return total;
     }
 
-    public string PackingLabel() // packing label -  list name and product id of each product in order   ** works
+    public string PackingLabel() // packing label -  list name and product id of each product in the order  
     {
         string label="";
         Console.WriteLine("Order: ");
@@ -47,7 +47,7 @@ public class Order
         return label;
     }
 
-    public void ShippingLabel() // shipping label. list name and address of the customer  *** works
+    public void ShippingLabel() // shipping label. list name and address of the customer 
     {
         Console.WriteLine($"Shipping to:\n{_customer.NameAndAddress()}");
     }
