@@ -2,11 +2,11 @@ using System;
 using System.Windows.Markup;
 public class Video
 {
-    public string _title;    // private? 
+    public string _title;     
     public string _author;
     public int _seconds;
     public List<Comment> _commentList;
-                                            // getter and setters????
+                                            
     public Video(string title, string author, int seconds)
     {
         _title = title;
