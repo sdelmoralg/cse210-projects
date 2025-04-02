@@ -28,8 +28,6 @@ public abstract class Event
     // that event type. For lectures, this includes the speaker name and capacity. For receptions this includes an email
     // for RSVP. For outdoor gatherings, this includes a statement of the weather.
     
-
-
     public string ShortDetails() // Lists the type of event, title, and the date.
     {
         return $"Type: {_type}\nTitle: {_title}\nDate: {_date}\n";
