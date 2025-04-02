@@ -23,7 +23,6 @@ class Program
         Console.WriteLine(reception.ShortDetails());
         Console.WriteLine("\n--------------------------------------------------------------------------\n");
 
-
         Address address3 = new Address("34 No Reeleccion", "Mexico City", "Estado de Mexico", "Mexico");
         Event outdoor = new Outdoor("Juan Gabriel Concert", "Juan Gabriel's last tour.", "July 30, 2025", "6:00 pm", address3, "Clear/Sunny");
 
