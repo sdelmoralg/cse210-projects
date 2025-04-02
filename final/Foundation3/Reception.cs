@@ -1,13 +1,13 @@
-using System;
+// using System;
 
-public class Reception : Event
-{
-    private string _rsvp;
+// public class Reception : Event
+// {
+//     private string _rsvp;
 
-    // constructor
+//     // constructor
 
-    public string FullDetails()
-    {
-        // full details override
-    }
-}
+//     public string FullDetails()
+//     {
+//         // full details override
+//     }
+// }

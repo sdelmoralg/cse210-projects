@@ -1,13 +1,13 @@
-using System;
+// using System;
 
-public class Outdoor : Event
-{
-    private string _weather;
+// public class Outdoor : Event
+// {
+//     private string _weather;
 
-    // constructor
+//     // constructor
 
-    public string FullDetails()
-    {
-        // full details override 
-    }
-}
+//     public string FullDetails()
+//     {
+//         // full details override 
+//     }
+// }
