@@ -13,6 +13,6 @@ public class Reception : Event
 
     public override string FullDetails() // Lists all of the above, plus type of event and an email for RSVP. 
     {
-        return StandardDetails() + $"Type of Event: {_type}\nEmail: {_rsvp}\n"; 
+        return StandardDetails() + $" Don't miss out on this {_type} event! Please RSVP to {_rsvp} to secure your spot!!\n"; 
     }
 }

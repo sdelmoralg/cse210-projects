@@ -22,7 +22,7 @@ public abstract class Event
 
     public virtual string StandardDetails() // Lists the title, description, date, time, and address.
     {
-        return $"Title: {_title}\nDescription: {_description}\nDate: {_date}\nTime: {_time}\nAddress: {_address.GetAddress()}\n";
+        return $"Get ready for {_title}! Join us on {_date} at {_address.GetAddress()} starting at {_time} for an unforgetable experience! {_description} This is your chance to be part of something exciting! Mark your calendar and get ready for an amazing time!";
     }
     public abstract string FullDetails(); // Lists all of the above, plus type of event and information specific to 
     // that event type. For lectures, this includes the speaker name and capacity. For receptions this includes an email
@@ -30,6 +30,6 @@ public abstract class Event
     
     public string ShortDetails() // Lists the type of event, title, and the date.
     {
-        return $"Type: {_type}\nTitle: {_title}\nDate: {_date}\n";
+        return $"Join us for a {_type} event - {_title}! Mark your calendar for {_date} and be part of something special! Don't miss out on this exciting event!\n";
     }
 }

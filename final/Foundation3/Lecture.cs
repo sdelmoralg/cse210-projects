@@ -14,6 +14,6 @@ public class Lecture : Event
 
     public override string FullDetails() // Lists all of the above, plus type of event and the speaker name and capacity.
     {
-        return StandardDetails() + $"Type of Event: {_type}\nSpeaker: {_speaker}\nCapacity: {_capacity}\n"; 
+        return StandardDetails() + $" Dont miss out on this {_type} featuring {_speaker}. This event has a capacity of {_capacity} so be sure to secure your spot before is full!!\n"; 
     }
 }
