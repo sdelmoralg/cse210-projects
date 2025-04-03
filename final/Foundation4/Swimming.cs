@@ -5,6 +5,10 @@ public class Swimming : Activity
     private int _laps;
 
     // constructor
+    public Swimming(DateTime date, int minutes, int laps) : base(date, minutes)
+    {
+        _laps = laps;
+    }
 
     // override methods
     public double GetDistance()

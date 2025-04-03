@@ -2,9 +2,13 @@ using System;
 
 public class Cycling : Activity
 {
-    private double speed;
+    private double _speed;
 
     // constructor
+    public Cycling(DateTime date, int minutes, double speed) : base(date, minutes)
+    {
+        _speed = speed;
+    }
 
      // override methods
     public double GetDistance()
