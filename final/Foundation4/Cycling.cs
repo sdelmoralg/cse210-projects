@@ -1,34 +1,34 @@
-using System;
+// using System;
 
-public class Cycling : Activity
-{
-    private double _speed;
+// public class Cycling : Activity
+// {
+//     private double _speed;
 
-    // constructor
-    public Cycling(DateTime date, int minutes, double speed) : base(date, minutes)
-    {
-        _speed = speed;
-    }
+//     // constructor
+//     public Cycling(DateTime date, int minutes, double speed) : base(date, minutes, "Cycling")
+//     {
+//         _speed = speed;
+//     }
 
-     // override methods
-    public double GetDistance()
-    {
-        // get distance
-    }
+//      // override methods
+//     public override double GetDistance()
+//     {
+//         // get distance
+//     }
 
-    public double GetSpeed()
-    {
-        // get speed
-    }
+//     public override double GetSpeed()
+//     {
+//         // get speed
+//     }
 
-    public double GetPace()
-    {
-        // get pace
-    }
+//     public override double GetPace()
+//     {
+//         // get pace
+//     }
 
-    public string GetSummary()
-    {
-        // get summary in the from: date - Activity - distance - speed-pace
-        // 03 Nov 2022 Running (30 min): Distance 4.8 km, Speed: 9.6 kph, Pace: 6.25 min per km
-    }
-}
+//     public override string GetSummary()
+//     {
+//         // get summary in the from: date - Activity - distance - speed-pace
+//         // 03 Nov 2022 Running (30 min): Distance 4.8 km, Speed: 9.6 kph, Pace: 6.25 min per km
+//     }
+// }
