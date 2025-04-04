@@ -43,7 +43,7 @@ public class Activity // the base class should contain virtual methods for getti
     {
         // get summary in the from: date - Activity - distance - speed-pace
         // 03 Nov 2022 Running (30 min): Distance 4.8 km, Speed: 9.6 kph, Pace: 6.25 min per km
-        return $"{Date:dd MMM yyyy} {_activity} ({Minutes} min): Distance {GetDistance():F2} km, Speed: {GetSpeed():F2} kph, Pace: {GetPace():F2} min per km";       
+        return $"{Date:dd MMM yyyy} {_activity} ({Minutes} min): Distance {GetDistance():F1} km, Speed: {GetSpeed():F1} kph, Pace: {GetPace():F2} min per km";       
 
     }
 }
